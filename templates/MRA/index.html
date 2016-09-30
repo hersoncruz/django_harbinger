@@ -1,0 +1,11 @@
+{% load static %}
+
+{% if employee_list %}
+    <ul>
+    {% for employee in employee_list %}
+        <li>{{ employee.first_name }} {{employee.last_name}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No info is available.</p>
+{% endif %}
