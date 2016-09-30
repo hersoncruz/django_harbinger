@@ -1,24 +1,42 @@
-{% load static %}
+<html lang="en">
+  <body>
 
-{% if employee_list %}
-    <h2> Plant Employees </h2>
-    <ul>
-    {% for employee in employee_list %}
-        <li>{{ employee.first_name }} {{employee.last_name}}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No info is available.</p>
-{% endif %}
-    <br>
-    <h2> Equipment Units </h2>
-{% if unit_list %}
-    <ul>
-    {% for unit in unit_list %}
-        <li>{{ unit.unit_number }} {{unit.name}}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No units are available.</p>
-{% endif %}
-    <br>
+    <head>
+      <meta charset="utf-8">
+      <meta name="author" content="Chase Smith">
+      <title>CMMS</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+      <div class="container-fluid text-center">
+        <h1 class="title">CMMS</h1>
+        <hr>
+        {% load static %}
+
+        {% if employee_list %}
+            <h2> Plant Employees </h2>
+            <ul>
+            {% for employee in employee_list %}
+                <li>{{ employee.first_name }} {{employee.last_name}}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No info is available.</p>
+        {% endif %}
+            <br>
+            <h2> Equipment Units </h2>
+        {% if unit_list %}
+            <ul>
+            {% for unit in unit_list %}
+                <li>{{ unit.unit_number }} {{unit.name}}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No units are available.</p>
+        {% endif %}
+            <br>
+      </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
